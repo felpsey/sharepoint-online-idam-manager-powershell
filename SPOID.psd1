@@ -2,7 +2,7 @@
     RootModule = 'SPOID.psm1'
     ModuleVersion = '0.0.1'
     Author = 'Ethan Phelps'
-    Description = 'A PowerShell module for auditing SharePoint IdAM configurations'
+    Description = 'A PowerShell module for managing and auditing SharePoint IdAM configurations'
 
     PowerShellVersion = '7.4'
 
