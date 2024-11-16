@@ -84,6 +84,8 @@ function Connect-SPOID {
     catch {
         throw "Unable to connect to SharePoint Online: $($_.Exception.Message)"
     }
+
+    Write-Host "Successfully connected to SharePoint Online Management Shell using SPOID module" -ForegroundColor Green
 }
 
-Export-ModuleMember -Function Connect-SPOID, Register-SPOIDEntraIDApplication, Get-SPOIDTenantSites
+Export-ModuleMember -Function Connect-SPOID, Register-SPOIDEntraIDApplication, Get-SPOIDTenantSites, Test-SPOIDConnection

@@ -11,7 +11,8 @@
     )
 
     NestedModules = @(
-        'modules/SPOID.Sites.psm1'
+        'modules/SPOID.Sites.psm1',
+        'modules/SPOID.Utilities.psm1'
     )
 
     PrivateData = @{
