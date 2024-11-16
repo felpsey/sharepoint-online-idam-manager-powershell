@@ -1,5 +1,3 @@
-# Import-Module -Name "PnP.Powershell"
-
 function Get-SPOIDTenantSites {
     <#
     .SYNOPSIS
