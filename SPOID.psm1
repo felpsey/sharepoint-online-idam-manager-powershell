@@ -68,4 +68,4 @@ function Connect-SPOID {
     Write-Host "Successfully connected to SharePoint Online using SPOID module" -ForegroundColor Green
 }
 
-Export-ModuleMember -Function Connect-SPOID, Register-SPOIDEntraIDApplication, Get-SPOIDTenantSites, Test-SPOIDConnection
+Export-ModuleMember -Function Connect-SPOID, Test-SPOIDConnection, Export-SPOIDTenantSites

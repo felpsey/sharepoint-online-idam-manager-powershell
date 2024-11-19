@@ -1,6 +1,12 @@
 function Test-SPOIDConnection {
+    <#
+    .SYNOPSIS
+    Checks if there is an active connect to SharePoint Online
+
+    #>
+
     try {
-        $context = Get-PnPContext
+        Get-PnPContext
     }
     catch {
         # SharePoint Online Management Shell is not connected

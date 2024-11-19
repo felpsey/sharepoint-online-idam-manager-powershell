@@ -33,4 +33,40 @@ function Get-SPOIDTenantSites {
     return $filteredSites
 }
 
-Export-ModuleMember -Function Get-SPOIDTenantSites
+function Export-SPOIDTenantSites {
+    param (
+        [ValidateSet("HTML", "CSV", "JSON")]
+        [string]$OutputFormat,
+        [string]$OutputFile = "$((Get-Date).ToString("yyyy_MM_dd_HH_mm_ss"))_tenant_sites"
+    )
+
+    if (-not (Test-SPOIDConnection)) {
+        Write-Error "A connection to SharePoint Online does not exist in this session"
+    
+        Exit 1
+    }
+    
+    switch ($OutputFormat) {
+        "HTML" {
+            Write-Verbose "Exporting tenant sites as HTML..."
+        }
+    
+        "CSV" {
+            Write-Verbose "Exporting tenant sites as CSV..."
+
+            try {
+                Get-SPOIDTenantSites | Export-Csv -Path "$($OutputFile).csv"
+            }
+            catch {
+                <#Do this if a terminating exception happens#>
+            }
+        }
+    
+        "JSON" {
+            Write-Verbose "Exporting tenant sites as JSON..."
+        }
+    }
+
+}
+
+Export-ModuleMember -Function Get-SPOIDTenantSites, Export-SPOIDTenantSites
