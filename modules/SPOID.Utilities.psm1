@@ -1,7 +1,7 @@
 function Connect-SPOID {
     <#
     .SYNOPSIS
-    Creates a new conneciton to the SharePoint Online Management Shell
+    Creates a new connection to the SharePoint Online Management Shell
 
     .DESCRIPTION
     Wrapper for Connect-PnPOnline
@@ -45,7 +45,7 @@ function Connect-SPOID {
         }
     }
 
-    Write-Verbose "Connecting to $($ConnectionUrl) $($PSCmdlet.ParameterSetName)"
+    Write-Warning "Connecting to $($ConnectionUrl) $($PSCmdlet.ParameterSetName)"
 
     try {
         Invoke-WebRequest -Uri $ConnectionUrl -TimeoutSec 10 | Out-Null
@@ -63,7 +63,7 @@ function Connect-SPOID {
         Write-Error "Unable to connect to SharePoint Online: $($_.Exception.Message)"
     }
 
-    Write-Host "Successfully connected to SharePoint Online using SPOID module" -ForegroundColor Green
+    Write-Host "SUCCESS: Connected to $($Url)" -ForegroundColor Green
 }
 
 function Disconnect-SPOID {

@@ -1,2 +1,6 @@
-/output/
 .DS_Store
+**/.DS_Store
+**/*.html
+**/*.csv
+**/*.json
+.env
